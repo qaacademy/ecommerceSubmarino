@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import pages.CarrinhoPage;
+import pages.CheckOutPage;
 import pages.HomePage;
-import pages.ProdutoPage;
 import pages.LoginPage;
-import pages.PagamentoPage;
+import pages.ProdutoPage;
 
 public class CheckoutCompra {
 
@@ -17,7 +17,7 @@ public class CheckoutCompra {
 	ProdutoPage produto = new ProdutoPage(driver);
 	CarrinhoPage carrinho = new CarrinhoPage(driver);
 	LoginPage login = new LoginPage(driver);
-	PagamentoPage pagamento = new PagamentoPage(driver);
+	CheckOutPage checkout = new CheckOutPage(driver);
 
 	@Test
 	public void checkoutCompra() throws InterruptedException {
@@ -32,14 +32,14 @@ public class CheckoutCompra {
 		login.preencheEmail();
 		login.preencheSenha();
 		login.confirmaLogin();
-		pagamento.selecionaFrete();
-		pagamento.selecionaFormaPagamento();
-		pagamento.preencheCartaoCredito();
-		pagamento.preencheNomeCartaoCredito();
-		pagamento.preencheMesValidade();
-		pagamento.preencheAnoValidade();
-		pagamento.preencheCVV();
-		pagamento.salvarDadosComprasFuturas();
+		checkout.selecionaFrete();
+		checkout.selecionaFormaPagamento();
+		checkout.preencheCartaoCredito();
+		checkout.preencheNomeCartaoCredito();
+		checkout.preencheMesValidade();
+		checkout.preencheAnoValidade();
+		checkout.preencheCVV();
+		checkout.salvarDadosComprasFuturas();
 		driver.quit();
 
 	}
