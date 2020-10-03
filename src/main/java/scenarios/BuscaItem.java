@@ -14,9 +14,8 @@ public class BuscaItem {
 	@Test
 	public void buscaItem() throws InterruptedException {
 	
-	homepage.acessaUrl();
+	homepage.acessaUrl("https://www.submarino.com.br/");
 	homepage.aceitaCookies();
-	homepage.preencheBusca();
 	homepage.efetuaBusca();
 	driver.quit();
 	}

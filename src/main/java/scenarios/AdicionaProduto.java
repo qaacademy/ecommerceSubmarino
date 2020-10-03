@@ -17,9 +17,8 @@ public class AdicionaProduto {
 	@Test
 	public void adicionaProduto() throws InterruptedException{
 		
-		homepage.acessaUrl();
+		homepage.acessaUrl("https://www.submarino.com.br/");
 		homepage.aceitaCookies();
-		homepage.preencheBusca();
 		homepage.efetuaBusca();
 		homepage.selecionaProduto();
 		produto.incluiProduto();

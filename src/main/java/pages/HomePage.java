@@ -11,8 +11,10 @@ public class HomePage {
 		this.driver = driver;
 	}
 
-	public void acessaUrl() {
-		driver.get("http://www.submarino.com.br");
+	public void acessaUrl(String url) { // a variavel url é declarada dentro do parenteses, e o valor da variavel é
+										// definido na classe de testes, de modo a tornar esse metodo capaz de abrir
+										// qualquer url
+		driver.get(url);
 		driver.manage().window().maximize();
 
 	}
@@ -22,14 +24,9 @@ public class HomePage {
 		driver.findElement(By.xpath("//button[@id='lgpd-accept']")).click();
 	}
 
-	public void preencheBusca() {
-
-		driver.findElement(By.xpath("//input[@id='h_search-input']")).sendKeys("ração magnus filhotes");
-
-	}
-
 	public void efetuaBusca() throws InterruptedException {
 
+		driver.findElement(By.xpath("//input[@id='h_search-input']")).sendKeys("ração magnus filhotes");
 		driver.findElement(By.xpath("//button[@id='h_search-btn']")).click();
 		Thread.sleep(3000);
 	}

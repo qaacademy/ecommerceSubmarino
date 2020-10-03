@@ -22,9 +22,8 @@ public class CheckoutCompra {
 	@Test
 	public void checkoutCompra() throws InterruptedException {
 
-		homepage.acessaUrl();
+		homepage.acessaUrl("https://www.submarino.com.br/");
 		homepage.aceitaCookies();
-		homepage.preencheBusca();
 		homepage.efetuaBusca();
 		homepage.selecionaProduto();
 		produto.incluiProduto();

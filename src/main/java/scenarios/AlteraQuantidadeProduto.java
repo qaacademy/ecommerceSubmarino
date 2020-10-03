@@ -19,9 +19,8 @@ public class AlteraQuantidadeProduto {
 	@Test
 	public void alteraQuantidadeProduto() throws InterruptedException{
 		
-		homepage.acessaUrl();
+		homepage.acessaUrl("https://www.submarino.com.br/");
 		homepage.aceitaCookies();
-		homepage.preencheBusca();
 		homepage.efetuaBusca();
 		homepage.selecionaProduto();
 		produto.incluiProduto();
