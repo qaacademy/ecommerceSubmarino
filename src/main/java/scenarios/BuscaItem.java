@@ -16,7 +16,7 @@ public class BuscaItem {
 	
 	homepage.acessaUrl("https://www.submarino.com.br/");
 	homepage.aceitaCookies();
-	homepage.efetuaBusca();
+	homepage.efetuaBusca("ração magnus premium filhotes");
 	driver.quit();
 	}
 }

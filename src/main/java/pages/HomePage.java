@@ -24,19 +24,19 @@ public class HomePage {
 		driver.findElement(By.xpath("//button[@id='lgpd-accept']")).click();
 	}
 
-	public void efetuaBusca() throws InterruptedException {
+	public void efetuaBusca(String produtoDesejado) throws InterruptedException {
 
-		driver.findElement(By.xpath("//input[@id='h_search-input']")).sendKeys("ração magnus filhotes");
+		driver.findElement(By.xpath("//input[@id='h_search-input']")).sendKeys(produtoDesejado);
 		driver.findElement(By.xpath("//button[@id='h_search-btn']")).click();
 		Thread.sleep(3000);
 	}
 
 	public void selecionaProduto() throws InterruptedException {
-
+		Thread.sleep(3000);
 		driver.findElement(By.xpath(
-				"//div[@class='row product-grid no-gutters main-grid']//div[1]//div[1]//div[2]//a[1]//section[1]//div[1]//div[1]//div[1]//picture[1]//img[1]"))
+				"//body/div[@id='root']/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/section[1]/div[1]/div[1]/div[1]/picture[1]/img[1]"))
 				.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	}
 
 	public void efetuaLogout() throws InterruptedException {

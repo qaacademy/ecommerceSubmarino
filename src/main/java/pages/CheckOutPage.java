@@ -14,7 +14,7 @@ public class CheckOutPage {
 	}
 
 	public void selecionaFrete() throws InterruptedException {
-		Thread.sleep(90000);
+		Thread.sleep(60000);
 		driver.findElement(By.xpath("//li[@id='CONVENTIONAL-menu-item']//label")).click();
 	}
 
@@ -23,37 +23,37 @@ public class CheckOutPage {
 				.click();
 	}
 
-	public void preencheCartaoCredito() throws InterruptedException {
+	public void preencheCartaoCredito(String numeroCartao) throws InterruptedException {
 		driver.findElement(By.xpath("//single-card-payment//input[@placeholder='Número do cartão']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//single-card-payment//input[@placeholder='Número do cartão']"))
-				.sendKeys("347109420882533");
+				.sendKeys(numeroCartao);
 		driver.findElement(By.xpath("//single-card-payment//input[@placeholder='Número do cartão']"))
 				.sendKeys(Keys.TAB);
 		Thread.sleep(3000);
 	}
 
-	public void preencheNomeCartaoCredito() throws InterruptedException {
+	public void preencheNomeCartaoCredito(String nomeCartaoCredito) throws InterruptedException {
 
 		driver.findElement(By.xpath("//single-card-payment//label[2]//input[1]")).click();
-		driver.findElement(By.xpath("//single-card-payment//label[2]//input[1]")).sendKeys("Eduardo Murata");
+		driver.findElement(By.xpath("//single-card-payment//label[2]//input[1]")).sendKeys(nomeCartaoCredito);
 		Thread.sleep(3000);
 	}
 
-	public void preencheMesValidade() {
+	public void preencheMesValidade(String mesValidade) {
 		Select optionMesValidade = new Select(driver.findElement(By.xpath("//body//single-card-payment//select[1]")));
-		optionMesValidade.selectByVisibleText("7");
+		optionMesValidade.selectByVisibleText(mesValidade);
 	}
 
-	public void preencheAnoValidade() {
+	public void preencheAnoValidade(String anoValidade) {
 		Select optionAnoValidade = new Select(driver.findElement(By.xpath("//body//single-card-payment//select[2]")));
-		optionAnoValidade.selectByVisibleText("2021");
+		optionAnoValidade.selectByVisibleText(anoValidade);
 	}
 
-	public void preencheCVV() {
+	public void preencheCVV(String cvv) {
 		driver.findElement(By.xpath(
 				"//article[@id='payment-option-CREDIT_CARD']//div//div//new-credit-card-payment//section//single-card-payment//ul//new-card-radio-input//li//form//label//div//input[contains(@placeholder,'CVV')]"))
-				.sendKeys("9880");
+				.sendKeys(cvv);
 
 	}
 

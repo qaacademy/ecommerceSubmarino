@@ -11,12 +11,12 @@ public class LoginPage {
 		this.driver = driver;
 	}
 	
-	public void preencheEmail() {
-		driver.findElement(By.xpath("//input[@id='email-input']")).sendKeys("eduardomurata@hotmail.com");
+	public void preencheEmail(String email) {
+		driver.findElement(By.xpath("//input[@id='email-input']")).sendKeys(email);
 	}
 	
-	public void preencheSenha() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@id='password-input']")).sendKeys("106318");
+	public void preencheSenha(String password) throws InterruptedException {
+		driver.findElement(By.xpath("//input[@id='password-input']")).sendKeys(password);
 		Thread.sleep(3000);
 	}
 	

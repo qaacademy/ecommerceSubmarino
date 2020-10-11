@@ -14,7 +14,7 @@ public class ProdutoPage {
 	public void incluiProduto() throws InterruptedException {
 
 		driver.findElement(By.xpath("//a[@id='btn-buy']//span[contains(text(),'Comprar')]")).click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 	}
 
 }

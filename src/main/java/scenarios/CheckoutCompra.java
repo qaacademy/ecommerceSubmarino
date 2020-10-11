@@ -24,20 +24,20 @@ public class CheckoutCompra {
 
 		homepage.acessaUrl("https://www.submarino.com.br/");
 		homepage.aceitaCookies();
-		homepage.efetuaBusca();
+		homepage.efetuaBusca("ração magnus premium filhotes");
 		homepage.selecionaProduto();
 		produto.incluiProduto();
 		carrinho.confirmaCarrinho();
-		login.preencheEmail();
-		login.preencheSenha();
+		login.preencheEmail(""); // preencher com e-mail de conta Submarino válida, entre aspas duplas ("")
+		login.preencheSenha(""); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
 		login.confirmaLogin();
 		checkout.selecionaFrete();
 		checkout.selecionaFormaPagamento();
-		checkout.preencheCartaoCredito();
-		checkout.preencheNomeCartaoCredito();
-		checkout.preencheMesValidade();
-		checkout.preencheAnoValidade();
-		checkout.preencheCVV();
+		checkout.preencheCartaoCredito("347109420882533");
+		checkout.preencheNomeCartaoCredito("NOME CLIENTE");
+		checkout.preencheMesValidade("7");
+		checkout.preencheAnoValidade("2021");
+		checkout.preencheCVV("9880");
 		checkout.salvarDadosComprasFuturas();
 		driver.quit();
 
