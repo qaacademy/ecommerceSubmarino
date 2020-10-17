@@ -1,27 +1,33 @@
 package pages;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
-	
-	WebDriver driver;
+public class LoginPage extends BasePage{
+
+	final String EMAIL = "//input[@id='email-input']";
+	final String SENHA = "//input[@id='password-input']";
+	final String BTN_EFETUA_LOGIN = "//button[@id='login-button']";
 
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
-	
-	public void preencheEmail(String email) {
-		driver.findElement(By.xpath("//input[@id='email-input']")).sendKeys(email);
+
+	public void preencheEmail(String email) throws IOException {
+		driver.findElement(By.xpath(EMAIL)).sendKeys(email);
+		screenShot("preenche o Email");
 	}
-	
-	public void preencheSenha(String password) throws InterruptedException {
-		driver.findElement(By.xpath("//input[@id='password-input']")).sendKeys(password);
-		Thread.sleep(3000);
+
+	public void preencheSenha(String password) throws InterruptedException, IOException {
+		driver.findElement(By.xpath(SENHA)).sendKeys(password);
+		screenShot("preenche a Senha");
 	}
-	
-	public void confirmaLogin() throws InterruptedException {
-		driver.findElement(By.xpath("//button[@id='login-button']")).click();
+
+	public void efetuaLogin() throws InterruptedException, IOException {
+		driver.findElement(By.xpath(BTN_EFETUA_LOGIN)).click();
+		screenShot("efetua o login");
 	}
 
 }

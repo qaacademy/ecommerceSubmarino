@@ -1,5 +1,8 @@
 package scenarios;
 
+import java.io.IOException;
+
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,11 +15,15 @@ public class BuscaItem {
 	HomePage homepage = new HomePage(driver);
 	
 	@Test
-	public void buscaItem() throws InterruptedException {
+	public void buscaItem() throws InterruptedException, IOException {
 	
 	homepage.acessaUrl("https://www.submarino.com.br/");
 	homepage.aceitaCookies();
 	homepage.efetuaBusca("ração magnus premium filhotes");
-	driver.quit();
+	}
+	
+	@After
+	public void after() {
+		driver.quit();
 	}
 }

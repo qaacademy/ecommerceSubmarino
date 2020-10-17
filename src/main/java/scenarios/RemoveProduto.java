@@ -1,5 +1,8 @@
 package scenarios;
 
+import java.io.IOException;
+
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +19,7 @@ public class RemoveProduto {
 	CarrinhoPage carrinho = new CarrinhoPage(driver);
 	
 	@Test
-	public void adicionaProduto() throws InterruptedException{
+	public void adicionaProduto() throws InterruptedException, IOException{
 		
 		homepage.acessaUrl("https://www.submarino.com.br/");
 		homepage.aceitaCookies();
@@ -24,6 +27,10 @@ public class RemoveProduto {
 		homepage.selecionaProduto();
 		produto.incluiProduto();
 		carrinho.limpaCarrinho();
+	}
+	
+	@After
+	public void after() {
 		driver.quit();
 	}
 

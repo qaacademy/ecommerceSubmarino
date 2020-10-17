@@ -1,5 +1,10 @@
 package scenarios;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,8 +24,13 @@ public class CheckoutCompra {
 	LoginPage login = new LoginPage(driver);
 	CheckOutPage checkout = new CheckOutPage(driver);
 
+	@Before
+	public void before() {
+		configuraChromeDriver();
+	}
+
 	@Test
-	public void checkoutCompra() throws InterruptedException {
+	public void checkoutCompra() throws InterruptedException, IOException {
 
 		homepage.acessaUrl("https://www.submarino.com.br/");
 		homepage.aceitaCookies();
@@ -28,9 +38,10 @@ public class CheckoutCompra {
 		homepage.selecionaProduto();
 		produto.incluiProduto();
 		carrinho.confirmaCarrinho();
-		login.preencheEmail(""); // preencher com e-mail de conta Submarino válida, entre aspas duplas ("")
-		login.preencheSenha(""); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
-		login.confirmaLogin();
+		login.preencheEmail("eduardomurata@hotmail.com"); // preencher com e-mail de conta Submarino válida, entre aspas
+															// duplas ("")
+		login.preencheSenha("106318"); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
+		login.efetuaLogin();
 		checkout.selecionaFrete();
 		checkout.selecionaFormaPagamento();
 		checkout.preencheCartaoCredito("347109420882533");
@@ -39,7 +50,32 @@ public class CheckoutCompra {
 		checkout.preencheAnoValidade("2021");
 		checkout.preencheCVV("9880");
 		checkout.salvarDadosComprasFuturas();
-		driver.quit();
 
+	}
+
+	@After
+	public void after() {
+		driver.quit();
+	}
+
+	/**
+	 * Configura o Chrome Driver com espera Implicita de até 90 Segundos
+	 */
+	private void configuraChromeDriver() {
+		// Configura espera de até 90 Segundos qualquer elemento.
+
+//			driver.manage().window().maximize();		
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			chromeOptions.addArguments(
+////					   "--headless"
+//					   "--disable-web-security",
+//					   "--ignore-certificate-errors",
+//					   "--disable-gpu",
+//					   "window-size=1200x600",
+//					   "disable-popup-blocking",
+//					   "disable-infobars"
+//					  );
+		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 	}
 }
