@@ -38,9 +38,8 @@ public class CheckoutCompra {
 		homepage.selecionaProduto();
 		produto.incluiProduto();
 		carrinho.confirmaCarrinho();
-		login.preencheEmail("eduardomurata@hotmail.com"); // preencher com e-mail de conta Submarino válida, entre aspas
-															// duplas ("")
-		login.preencheSenha("106318"); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
+		login.preencheEmail(""); // preencher com e-mail de conta Submarino válida, entre aspas duplas ("")											
+		login.preencheSenha(""); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
 		login.efetuaLogin();
 		checkout.selecionaFrete();
 		checkout.selecionaFormaPagamento();
@@ -50,7 +49,6 @@ public class CheckoutCompra {
 		checkout.preencheAnoValidade("2021");
 		checkout.preencheCVV("9880");
 		checkout.salvarDadosComprasFuturas();
-
 	}
 
 	@After
