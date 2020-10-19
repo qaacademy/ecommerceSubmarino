@@ -37,16 +37,16 @@ public class CheckoutCompra {
 		try {
 			homepage.acessaUrl("https://www.submarino.com.br/");
 			homepage.aceitaCookies();
-			homepage.efetuaBusca("ração magnus premium filhotes");
+			homepage.efetuaBusca("raï¿½ï¿½o magnus premium filhotes");
 			homepage.selecionaProduto();
 			produto.incluiProduto();
 			carrinho.confirmaCarrinho();
-			login.preencheEmail(""); // preencher com e-mail de conta Submarino válida, entre // aspas duplas ("")
-			login.preencheSenha(""); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
+			login.preencheEmail(""); // preencher com e-mail de conta Submarino vï¿½lida, entre // aspas duplas ("")
+			login.preencheSenha(""); // preencher com senha de conta Submarino vï¿½lida, entre aspas duplas ("")
 			login.efetuaLogin();
 			checkout.selecionaFrete();
 			checkout.selecionaFormaPagamento();
-			checkout.preencheCartaoCredito("347109420882533");
+			checkout.preencheCartaoCredito("347109420882533");0,
 			checkout.preencheNomeCartaoCredito("NOME CLIENTE");
 			checkout.preencheMesValidade("7");
 			checkout.preencheAnoValidade("2021");
@@ -64,10 +64,10 @@ public class CheckoutCompra {
 	}
 
 	/**
-	 * Configura o Chrome Driver com espera Implicita de até 90 Segundos
+	 * Configura o Chrome Driver com espera Implicita de atï¿½ 90 Segundos
 	 */
 	private void configuraChromeDriver() {
-		// Configura espera de até 90 Segundos qualquer elemento.
+		// Configura espera de atï¿½ 90 Segundos qualquer elemento.
 
 //			driver.manage().window().maximize();		
 //			ChromeOptions chromeOptions = new ChromeOptions();
