@@ -39,7 +39,7 @@ public class CheckOutPage extends BasePage{
 		driver.findElement(By.xpath(CARTAO_CREDITO)).sendKeys(numeroCartao);
 		driver.findElement(By.xpath(CARTAO_CREDITO)).sendKeys(Keys.TAB);
 		screenShot("preenche Cartão de Crédito");
-		logger.info("Número do Cartão preenchido com sucesso.");
+		logger.info("Número do Cartao preenchido com sucesso.");
 	}
 
 	public void preencheNomeCartaoCredito(String nomeCartaoCredito) throws InterruptedException, IOException {
@@ -47,33 +47,33 @@ public class CheckOutPage extends BasePage{
 		driver.findElement(By.xpath(NOME_CARTAO_CREDITO)).click();
 		driver.findElement(By.xpath(NOME_CARTAO_CREDITO)).sendKeys(nomeCartaoCredito);
 		screenShot("prenche o Nome");
-		logger.info("Nome do Titular do Cartão preenchido com sucesso.");
+		logger.info("Nome do Titular do Cartao preenchido com sucesso.");
 	}
 
 	public void preencheMesValidade(String mesValidade) throws IOException {
 		Select optionMesValidade = new Select(driver.findElement(By.xpath(MES_VALIDADE)));
 		optionMesValidade.selectByVisibleText(mesValidade);
 		screenShot("preenche o Mês de Validade");
-		logger.info("Mês de Validade do Cartão preenchido com sucesso.");
+		logger.info("Mes de Validade do Cartao preenchido com sucesso.");
 	}
 
 	public void preencheAnoValidade(String anoValidade) throws IOException {
 		Select optionAnoValidade = new Select(driver.findElement(By.xpath(ANO_VALIDADE)));
 		optionAnoValidade.selectByVisibleText(anoValidade);
 		screenShot("preenche o Ano de Validade");
-		logger.info("Ano de Validade do Cartão preenchido com sucesso.");
+		logger.info("Ano de Validade do Cartao preenchido com sucesso.");
 	}
 
 	public void preencheCVV(String cvv) throws IOException {
 		driver.findElement(By.xpath(CVV)).sendKeys(cvv);
 		screenShot("preenche o CVV");
-		logger.info("CVV do Cartão preenchido com sucesso.");
+		logger.info("CVV do Cartao preenchido com sucesso.");
 
 	}
 
 	public void salvarDadosComprasFuturas() throws InterruptedException, IOException {
 		driver.findElement(By.xpath(CHECKBOX_COMPRAS_FUTURAS)).click();
 		screenShot("seleciona Dados para Compras Futuras");
-		logger.info("Checkbox de gravação de Dados para Compras Futuras selecionado com sucesso.");
+		logger.info("Checkbox de gravacao de Dados para Compras Futuras selecionado com sucesso.");
 	}
 }

@@ -18,7 +18,7 @@ public class LoginPage extends BasePage{
 	public void preencheEmail(String email) throws IOException {
 		driver.findElement(By.xpath(EMAIL)).sendKeys(email);
 		screenShot("preenche o Email");
-		logger.info("E-mail preenchido com sucesso.");
+		logger.info("Email preenchido com sucesso.");
 	}
 
 	public void preencheSenha(String password) throws InterruptedException, IOException {
