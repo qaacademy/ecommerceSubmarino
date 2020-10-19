@@ -18,16 +18,19 @@ public class LoginPage extends BasePage{
 	public void preencheEmail(String email) throws IOException {
 		driver.findElement(By.xpath(EMAIL)).sendKeys(email);
 		screenShot("preenche o Email");
+		logger.info("E-mail preenchido com sucesso.");
 	}
 
 	public void preencheSenha(String password) throws InterruptedException, IOException {
 		driver.findElement(By.xpath(SENHA)).sendKeys(password);
 		screenShot("preenche a Senha");
+		logger.info("Senha preenchida com sucesso.");
 	}
 
 	public void efetuaLogin() throws InterruptedException, IOException {
 		driver.findElement(By.xpath(BTN_EFETUA_LOGIN)).click();
 		screenShot("efetua o login");
+		logger.info("Login efetuado com sucesso.");
 	}
 
 }

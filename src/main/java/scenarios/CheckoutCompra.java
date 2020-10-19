@@ -3,6 +3,7 @@ package scenarios;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +24,7 @@ public class CheckoutCompra {
 	CarrinhoPage carrinho = new CarrinhoPage(driver);
 	LoginPage login = new LoginPage(driver);
 	CheckOutPage checkout = new CheckOutPage(driver);
+	public static final Logger logger = Logger.getLogger(CheckoutCompra.class);
 
 	@Before
 	public void before() {
@@ -32,23 +34,29 @@ public class CheckoutCompra {
 	@Test
 	public void checkoutCompra() throws InterruptedException, IOException {
 
-		homepage.acessaUrl("https://www.submarino.com.br/");
-		homepage.aceitaCookies();
-		homepage.efetuaBusca("ração magnus premium filhotes");
-		homepage.selecionaProduto();
-		produto.incluiProduto();
-		carrinho.confirmaCarrinho();
-		login.preencheEmail(""); // preencher com e-mail de conta Submarino válida, entre aspas duplas ("")											
-		login.preencheSenha(""); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
-		login.efetuaLogin();
-		checkout.selecionaFrete();
-		checkout.selecionaFormaPagamento();
-		checkout.preencheCartaoCredito("347109420882533");
-		checkout.preencheNomeCartaoCredito("NOME CLIENTE");
-		checkout.preencheMesValidade("7");
-		checkout.preencheAnoValidade("2021");
-		checkout.preencheCVV("9880");
-		checkout.salvarDadosComprasFuturas();
+		try {
+			homepage.acessaUrl("https://www.submarino.com.br/");
+			homepage.aceitaCookies();
+			homepage.efetuaBusca("ração magnus premium filhotes");
+			homepage.selecionaProduto();
+			produto.incluiProduto();
+			carrinho.confirmaCarrinho();
+			login.preencheEmail("eduardomurata@hotmail.com"); // preencher com e-mail de conta Submarino válida, entre
+																// aspas duplas ("")
+			login.preencheSenha("106318"); // preencher com senha de conta Submarino válida, entre aspas duplas ("")
+			login.efetuaLogin();
+			checkout.selecionaFrete();
+			checkout.selecionaFormaPagamento();
+			checkout.preencheCartaoCredito("347109420882533");
+			checkout.preencheNomeCartaoCredito("NOME CLIENTE");
+			checkout.preencheMesValidade("7");
+			checkout.preencheAnoValidade("2021");
+			checkout.preencheCVV("9880");
+			checkout.salvarDadosComprasFuturas();
+
+		} catch (Exception e) {
+			logger.info(e.getStackTrace() + " " + e.getMessage());
+		}
 	}
 
 	@After

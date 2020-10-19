@@ -22,12 +22,14 @@ public class HomePage extends BasePage {
 		// qualquer url
 		driver.get(url);
 		screenShot("acessa a URL");
+		logger.info("URL acessada com sucesso.");
 	}
 
 	public void aceitaCookies() throws IOException {
 
 		driver.findElement(By.xpath(BTN_ACEITA_COOKIES)).click();
 		screenShot("aceita os cookies");
+		logger.info("Cookies aceitos com sucesso.");
 	}
 
 	public void efetuaBusca(String produtoDesejado) throws InterruptedException, IOException {
@@ -35,10 +37,12 @@ public class HomePage extends BasePage {
 		driver.findElement(By.xpath(BUSCA)).sendKeys(produtoDesejado);
 		driver.findElement(By.xpath(BTN_EFETUA_BUSCA)).click();
 		screenShot("busca o Produto");
+		logger.info("Busca efetuada com sucesso.");
 	}
 
 	public void selecionaProduto() throws InterruptedException, IOException {
 		driver.findElement(By.xpath(PRODUTO)).click();
 		screenShot("seleciona o Produto");
+		logger.info("Produto selecionado com sucesso.");
 	}
 }

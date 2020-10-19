@@ -17,6 +17,7 @@ public class ProdutoPage extends BasePage{
 
 		driver.findElement(By.xpath(BTN_COMPRAR)).click();
 		screenShot("inclui o Produto");
+		logger.info("Produto adicionado com sucesso.");
 	}
 
 }

@@ -17,25 +17,31 @@ public class CarrinhoPage extends BasePage{
 		super(driver);
 	}
 
-	public void acessaCarrinho() {
+	public void acessaCarrinho() throws IOException {
 
 		driver.findElement(By.xpath(BTN_CARRINHO)).click();
 		driver.findElement(By.xpath(BTN_VER_MEU_CARRINHO)).click();
+		screenShot ("acesso ao Carrinho");
+		logger.info("Carrinho acessado com sucesso.");
 	}
 
-	public void alteraQuantidade() throws InterruptedException {
+	public void alteraQuantidade() throws InterruptedException, IOException {
 
 		driver.findElement(By.xpath(BTN_MAIS)).click();
+		screenShot ("altera a quantidade de produto");
+		logger.info("Quantidade alterada com sucesso.");
 	}
 
-	public void limpaCarrinho() throws InterruptedException {
+	public void limpaCarrinho() throws InterruptedException, IOException {
 
 		driver.findElement(By.xpath(BTN_REMOVER)).click();
+		screenShot ("limpa o carrinho");
+		logger.info("Produto removido com sucesso.");
 	}
 
 	public void confirmaCarrinho() throws InterruptedException, IOException {
 
 		driver.findElement(By.xpath(BTN_CONTINUAR)).click();
-		screenShot("confirma o Carrinho");
+		screenShot("Carrinho confirmado com sucesso.");
 	}
 }
